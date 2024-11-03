@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>俳句自動作成アプリ</title>
+</head>
+<body>
+    <h1>俳句を作ってみよう！</h1>
+    <button onclick="generateHaiku()">俳句を作る</button>
+    <p id="haiku"></p>
+
+    <script>
+        function generateHaiku() {
+            // 五音と七音の言葉を用意
+            const fiveSyllables = ["春の風", "秋の空", "夏の海", "冬の夜", "山の風"];
+            const sevenSyllables = ["鳥が鳴いてる", "花が咲き出す", "川が流れる", "星が輝く", "雪が舞い落ち"];
+
+            // ランダムに単語を選ぶ
+            const line1 = fiveSyllables[Math.floor(Math.random() * fiveSyllables.length)];
+            const line2 = sevenSyllables[Math.floor(Math.random() * sevenSyllables.length)];
+            const line3 = fiveSyllables[Math.floor(Math.random() * fiveSyllables.length)];
+
+            // 俳句を表示する
+            document.getElementById("haiku").innerText = `${line1}\n${line2}\n${line3}`;
+        }
+    </script>
+</body>
+</html>
